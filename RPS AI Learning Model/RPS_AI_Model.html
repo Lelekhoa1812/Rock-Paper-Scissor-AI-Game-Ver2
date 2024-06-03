@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors AI Learning Model</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+        <div id="left-side">
+            <h1 id="user-msg">Set your pick</h1>
+            <img src="rock.jpg" alt="Rock" class="choice" id="rock" onclick="makeChoice('Rock')">
+            <img src="paper.jpg" alt="Paper" class="choice" id="paper" onclick="makeChoice('Paper')">
+            <img src="scissors.jpg" alt="Scissors" class="choice" id="scissors" onclick="makeChoice('Scissors')">
+        </div>
+        <div id="right-side">
+            <h1 id="bot-msg">Bot is picking...</h1>
+            <div id="bot-choice"></div>
+        </div>
+    </div>
+    <div id="scoreboard">
+        0 - 0
+    </div>
+
+	<script src="backend.js"></script>
+
+</body>
+</html>
