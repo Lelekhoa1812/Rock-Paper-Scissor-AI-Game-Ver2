@@ -1,2 +1,6 @@
 # Rock-Paper-Scissor-AI-Game-Ver2
-AI learning model game for Rock Paper Scissor game
+AI learning model game for Rock Paper Scissor game.
+
+The bot will execute their pick on 2 of these scenario:
+1. It execute the pick to outmove the most common pick from the user,
+2. When the learning model reach a specific cirteria, it will execute the move from the learning model, which based on the latest 2 consecutive moves to predict the next pick.
