@@ -125,8 +125,8 @@ function makeChoice(userChoice) {
     
     // Send alert message with tracking for reset
     setTimeout(() => {
-        alert(`You ${status}! You chose ${userChoice} when the Bot picked ${botChoice}. Mode: ${mode}.`);
-        //alert(`You ${status}! You chose ${userChoice} when the Bot picked ${botChoice}.`);
+        //alert(`You ${status}! You chose ${userChoice} when the Bot picked ${botChoice}. Mode: ${mode}.`);
+        alert(`You ${status}! You chose ${userChoice} when the Bot picked ${botChoice}.`);
         resetGame();
     }, 100);
 }
