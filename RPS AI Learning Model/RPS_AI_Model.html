@@ -1,29 +1,61 @@
+<!-- RPS_AI_Model.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors AI Learning Model</title>
-    <link href="style.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rock Paper Scissors AI Learning Model</title>
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="container">
-        <div id="left-side">
-            <h1 id="user-msg">Set your pick</h1>
-            <img src="rock.jpg" alt="Rock" class="choice" id="rock" onclick="makeChoice('Rock')">
-            <img src="paper.jpg" alt="Paper" class="choice" id="paper" onclick="makeChoice('Paper')">
-            <img src="scissors.jpg" alt="Scissors" class="choice" id="scissors" onclick="makeChoice('Scissors')">
-        </div>
-        <div id="right-side">
-            <h1 id="bot-msg">Bot is picking...</h1>
-            <div id="bot-choice"></div>
-        </div>
-    </div>
-    <div id="scoreboard">
-        0 - 0
+  <div id="top-bar">
+    <h1 id="user-msg">Set your pick</h1>
+    <h1 id="bot-msg">Bot is picking...</h1>
+  </div>
+
+  <div id="container">
+    <div id="left-side">
+      <img src="rock.jpg" alt="Rock" class="choice" id="rock" onclick="makeChoice('Rock')">
+      <img src="paper.jpg" alt="Paper" class="choice" id="paper" onclick="makeChoice('Paper')">
+      <img src="scissors.jpg" alt="Scissors" class="choice" id="scissors" onclick="makeChoice('Scissors')">
     </div>
 
-	<script src="backend.js"></script>
+    <div id="right-side">
+      <div id="bot-choice"></div>
+      <div class="mode-container">
+        <div class="mode-selector">
+          <label class="radio-option">
+            <input type="radio" name="mode" value="history2" checked>
+            <span class="custom-radio"></span>
+            Short Memory Mode
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="mode" value="full">
+            <span class="custom-radio"></span>
+            Long Memory Mode
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="mode" value="tf">
+            <span class="custom-radio"></span>
+            Tensorflow (Softmax)
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div id="scoreboard">0 - 0</div>
+
+  <script src="backend.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.15.0/dist/tf.min.js"></script>
+  <script>
+    // Bind strategyMode to radio selection
+    let strategyMode = "history2";
+    document.querySelectorAll('input[name="mode"]').forEach(el => {
+      el.addEventListener("change", e => {
+        strategyMode = e.target.value;
+      });
+    });
+  </script>
 </body>
 </html>
